@@ -11,12 +11,9 @@ class arrayfuntion
 {
 private:
     int size = 0;
-    // int arr[10];
+
     int *arr = new int[size];
-    // arrayfuntion(int a)
-    // {
-    //     n = a;
-    // }
+   
 public:
     void setdata(int a)
     {
@@ -41,14 +38,6 @@ public:
     }
     void insertElement(int a, int b)
     {
-        // int *newArr = new int[n + 1];
-        // for (int i = 0; i < n; i++)
-        // {
-        //     newArr[i] = arr[i];
-        // }
-        // delete[] arr;
-        // arr = newArr;
-
         for (int i = size; i >= a; i--)
         {
             arr[i + 1] = arr[i];
@@ -67,8 +56,6 @@ public:
 };
 int main()
 {
-    // cout << "enter the length of array";
-    // arrayfuntion obj(b);
     arrayfuntion obj;
     int menu, length, index, val;
 

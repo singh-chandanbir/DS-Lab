@@ -49,6 +49,7 @@ public:
 
 int main()
 {
+    system("clear");
     char check;
     int element, size;
     // stack (object) creation and size selection
@@ -59,9 +60,9 @@ int main()
 
     do
     {
+        system("clear");
         // Displaying the menu
         cout << "\n\t\tMENU\n";
-
         cout << "a.Push an Element on to Stack" << endl;
         cout << "b.Pop an Element from Stack" << endl;
         cout << "c.Demonstrate how Stack can be used to check Palindrome" << endl;
@@ -80,7 +81,6 @@ int main()
             cout << "Enter the element to be pushed" << endl;
             cin >> element;
             stk.pushElement(element);
-
             break;
         case 'c':
 
@@ -100,9 +100,10 @@ int main()
             cout << "Enter valid character" << endl;
             break;
         }
-
+        cout << "\tPress enter to continue....." << endl;
         system("read");
     } while (check != 'e');
+    system("clear");
 
     return 0;
 }
