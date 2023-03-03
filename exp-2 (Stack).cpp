@@ -14,8 +14,11 @@ public:
     {
         this->size = size;
     }
-    void pushElement(int a)
+    void pushElement()
     {
+        int element;
+        cout << "Enter the element to be pushed" << endl;
+        cin >> element;
         if (top >= size - 1)
         {
             cout << "\tSTACK OVERFLOW\n"
@@ -25,7 +28,7 @@ public:
         else if (-1 <= top < size - 1)
         {
             top++;
-            arry[top] = a;
+            arry[top] = element;
         }
     };
     void popElement()
@@ -39,9 +42,10 @@ public:
             cout << "\n stack under flow";
         }
     };
-    void checkPalindrome(){};
-    void overFlow(){};
-    void underFlow(){};
+    void checkPalindrome(){
+
+    };
+
     void displayStatus(){
 
     };
@@ -50,10 +54,10 @@ public:
 int main()
 {
     system("clear");
-    char check;
+    char menu;
     int element, size;
-    // stack (object) creation and size selection
 
+    // stack (object) creation with size selection
     cout << "Enter the size of stack" << endl;
     cin >> size;
     myStack stk(size);
@@ -72,25 +76,26 @@ int main()
         cout << "Enter the corresponding character" << endl;
 
         // charactor to navigate in the menu
-        cin >> check;
+        cin >> menu;
 
         // condition to navigate in the menu
-        switch (check)
+        switch (menu)
         {
         case 'a':
-            cout << "Enter the element to be pushed" << endl;
-            cin >> element;
-            stk.pushElement(element);
+            stk.pushElement();
+            break;
+        case 'b':
+            stk.popElement();
             break;
         case 'c':
-
+            stk.checkPalindrome();
             break;
         case 'd':
-
+            stk.displayStatus();
             break;
 
         case 'e':
-            cout << "Exiting the program.....\n"
+            cout << "Exiting the program....."
                  << endl;
             sleep(2);
             cout << "Bye Bye";
@@ -102,7 +107,7 @@ int main()
         }
         cout << "\tPress enter to continue....." << endl;
         system("read");
-    } while (check != 'e');
+    } while (menu != 'e');
     system("clear");
 
     return 0;

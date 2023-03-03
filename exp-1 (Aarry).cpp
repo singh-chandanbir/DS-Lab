@@ -11,9 +11,8 @@ class arrayfuntion
 {
 private:
     int size = 0;
-
     int *arr = new int[size];
-   
+
 public:
     void setdata(int a)
     {
