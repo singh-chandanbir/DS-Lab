@@ -1,6 +1,7 @@
 #include <iostream>
 #include <unistd.h>
-#include <stack>
+
+
 using namespace std;
 class myStack
 {
@@ -25,7 +26,7 @@ public:
                  << endl
                  << "more elements can't me added" << endl;
         }
-        else if (-1 <= top < size - 1)
+        else if (top < size - 1)
         {
             top++;
             arry[top] = element;
@@ -42,9 +43,48 @@ public:
             cout << "\n stack under flow";
         }
     };
-    void checkPalindrome(){
+    void checkPalindrome()
+    {
+        string str;
+        cout << "Enter a string to check palindrome: ";
+        cin >> str;
 
-    };
+        int len = str.length();
+        int mid = len / 2;
+        bool is_palindrome = true;
+
+        for (int i = 0; i < mid; i++)
+        {
+            pushElement(str[i]); // push first half of string onto stack
+        }
+
+        // compare second half of string with top elements of stack
+        if (len % 2 == 1)
+        {
+            mid++; // skip middle character if odd length
+        }
+        for (int i = mid; i < len; i++)
+        {
+            if (str[i] != [top])
+            {
+                is_palindrome = false;
+                break;
+            }
+            else
+            {
+                popElement();
+            }
+        }
+
+        if (is_palindrome)
+        {
+            cout << str << " is a palindrome.\n";
+        }
+        else
+        {
+            cout << str << " is not a palindrome.\n";
+        }
+    }
 
     void displayStatus(){
 
