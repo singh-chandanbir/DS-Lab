@@ -9,11 +9,11 @@ using namespace std;
 
 class arrayfuntion
 {
-private:
+public:
     int size = 0;
     int *arr = new int[size];
 
-public:
+
     void setdata(int a)
     {
         size = a;
@@ -25,6 +25,7 @@ public:
             cin >> temp;
             arr[i] = temp;
         }
+        cout<<arr;
     }
     void displaydata()
     {
@@ -55,12 +56,14 @@ public:
 };
 int main()
 {
+    
     arrayfuntion obj;
     int menu, length, index, val;
 
+    cout<<obj.arr;
     for (int i = 0; i == 0;)
     {
-        system("clear");
+        // system("clear");
         cout << "Enter te corresponting integer\n";
         cout << "  1. Creating a array of n integer element\n";
         cout << "  2. Display off array element with suitable headings\n";
@@ -71,19 +74,19 @@ int main()
         switch (menu)
         {
         case 1:
-            system("clear");
+            // system("clear");
             cout << "1. Creating a array of n integer element \n";
             cout << "Enter the length of array: ";
             cin >> length;
             obj.setdata(length);
             break;
         case 2:
-            system("clear");
+            // system("clear");
             obj.displaydata();
             system("read");
             break;
         case 3:
-            system("clear");
+            // system("clear");
             cout << "3. Inserting a element at a given Valid position\n";
             cout << "Enter the index at which element is to be inserted: ";
             cin >> index;
@@ -92,7 +95,7 @@ int main()
             obj.insertElement(index, val);
             break;
         case 4:
-            system("clear");
+            // system("clear");
             cout << "4. Deleting an element at a  given valid position\n";
             cout << "Enter the index at which element is to be deleted: ";
             cin >> index;
@@ -108,5 +111,5 @@ int main()
             break;
         }
     }
-    system("CLS");
+    // system("CLS");
 }

@@ -1,22 +1,25 @@
 #include <iostream>
 #include <unistd.h>
 
-
 using namespace std;
 class myStack
 {
 private:
+    // creating a array
     int size = 0;
     int *arry = new int[size];
     int top = -1;
 
 public:
+    // using constuctor to set the size of stack
     myStack(int size)
     {
         this->size = size;
     }
+
+    // funtion to push element
     void pushElement()
-    {
+    { // element that is to be pushed
         int element;
         cout << "Enter the element to be pushed" << endl;
         cin >> element;
@@ -30,13 +33,34 @@ public:
         {
             top++;
             arry[top] = element;
+            cout << element << " pushed" << endl;
         }
     };
+    void pushElement(int b)
+    {
+        int element;
+        cout << "Enter the element to be pushed" << endl;
+        element = b;
+        if (top >= size - 1)
+        {
+            cout << "\tSTACK OVERFLOW\n"
+                 << endl
+                 << "more elements can't me added" << endl;
+        }
+        else if (top < size - 1)
+        {
+            top++;
+            arry[top] = element;
+            cout << element << " pushed to stack" << endl;
+        }
+    };
+
     void popElement()
     {
         if (top > -1)
         {
             top--;
+            cout << "last element poped" << endl;
         }
         else
         {
@@ -65,7 +89,7 @@ public:
         }
         for (int i = mid; i < len; i++)
         {
-            if (str[i] != [top])
+            if (str[i] != arry[top])
             {
                 is_palindrome = false;
                 break;
@@ -86,8 +110,13 @@ public:
         }
     }
 
-    void displayStatus(){
-
+    void displayStatus()
+    {
+        for (int i = top; i >= 0; i--)
+        {
+            cout << arry[i] << " ";
+        }
+        cout << "\nStack Size: " << top + 1 << "\n";
     };
 };
 
@@ -109,7 +138,7 @@ int main()
         cout << "\n\t\tMENU\n";
         cout << "a.Push an Element on to Stack" << endl;
         cout << "b.Pop an Element from Stack" << endl;
-        cout << "c.Demonstrate how Stack can be used to check Palindrome" << endl;
+        cout << "c.Demonstra4te how Stack can be used to check Palindrome" << endl;
         cout << "d.Demonstrate Overflow and Underflow situations on Stack and Display the status of Stack" << endl;
         cout << "e.Exit" << endl;
         cout << "\n";
