@@ -2,7 +2,7 @@
 #include <unistd.h>
 
 using namespace std;
-class myStack
+class myStack 
 {
 private:
     // creating a array
@@ -39,7 +39,7 @@ public:
     void pushElement(int b)
     {
         int element;
-        cout << "Enter the element to be pushed" << endl;
+        // cout << "Enter the element to be pushed" << endl;
         element = b;
         if (top >= size - 1)
         {
@@ -51,7 +51,7 @@ public:
         {
             top++;
             arry[top] = element;
-            cout << element << " pushed to stack" << endl;
+            // cout << element << " pushed to stack" << endl;
         }
     };
 
